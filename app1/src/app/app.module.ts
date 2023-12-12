@@ -6,6 +6,8 @@ import { AppComponent } from './app.component';
 
 import { TopoComponent } from './topo/topo.component';
 import { PainelComponent } from './painel/painel.component';
+import { ProcessoComponent } from './processo/processo.component';
+import { TentativasComponent } from './tentativas/tentativas.component';
 
 
 
@@ -13,7 +15,9 @@ import { PainelComponent } from './painel/painel.component';
   declarations: [
     AppComponent,
     TopoComponent,
-    PainelComponent
+    PainelComponent,
+    ProcessoComponent,
+    TentativasComponent
   ],
   imports: [
     BrowserModule,
