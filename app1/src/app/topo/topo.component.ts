@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   styleUrl: './topo.component.css'
 })
 export class TopoComponent {
-
+  public titulo:string = "Apredendo Inglês";
 }
