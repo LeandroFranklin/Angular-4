@@ -10,13 +10,15 @@ import { FRASES } from './frases.mock';
 })
 export class PainelComponent {
 
-  public instrucao:string = "Traduza a frase";
+  public instrucao: string = "Traduza a frase";
   public frases: Frase[] = FRASES;
+  public resposta: string = "";
 
   constructor(){console.log(this.frases)}
 
-  public atualizarResposta(): void{
-    console.log("teste");
+  public atualizarResposta(resposta:Event): void{
+    this.resposta = ((<HTMLInputElement>resposta.target).value);
+    console.log(this.resposta);
   }
 
 }
