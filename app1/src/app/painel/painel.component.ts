@@ -15,4 +15,8 @@ export class PainelComponent {
 
   constructor(){console.log(this.frases)}
 
+  public atualizarResposta(): void{
+    console.log("teste");
+  }
+
 }
