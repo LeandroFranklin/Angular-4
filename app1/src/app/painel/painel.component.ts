@@ -9,17 +9,16 @@ import { FRASES } from './frases.mock';
   styleUrl: './painel.component.css'
 })
 export class PainelComponent {
+  public instrucao: string = "Traduza a frase"; //Texto String interpolation
 
-  public instrucao: string = "Traduza a frase";
-  public frases: Frase[] = FRASES;
   public resposta: string = "";
-
   public rodada: number = 0;
-  public rodadaFrase: Frase; 
+  public rodadaFrase: Frase;
+  
+  public frases: Frase[] = FRASES;
 
   constructor(){
     this.rodadaFrase = this.frases[this.rodada];
-    console.log(this.frases)
   }
 
   public atualizarResposta(resposta:Event): void{
@@ -27,7 +26,19 @@ export class PainelComponent {
   }
 
   public verificarResposta(){
-    console.log("Verificar resposta: ", this.resposta)
+
+    if(this.rodadaFrase.frasePtBr == this.resposta){
+
+      this.rodada ++;
+      this.rodadaFrase = this.frases[this.rodada];
+
+      alert("Tradução está correta");
+    }
+
+    else{
+      alert("Tradução está errada")
+    }
+
   }
 
 }
