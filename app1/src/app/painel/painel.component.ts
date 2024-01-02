@@ -13,7 +13,7 @@ export class PainelComponent {
 
   public resposta: string = "";
   public rodada: number = 0;
-  public rodadaFrase: Frase;
+  public rodadaFrase!: Frase;
 
   public progresso: number = 0;
   
