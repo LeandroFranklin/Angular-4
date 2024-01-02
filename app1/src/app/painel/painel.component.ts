@@ -14,6 +14,8 @@ export class PainelComponent {
   public resposta: string = "";
   public rodada: number = 0;
   public rodadaFrase: Frase;
+
+  public progresso: number = 0;
   
   public frases: Frase[] = FRASES;
 
@@ -29,7 +31,13 @@ export class PainelComponent {
 
     if(this.rodadaFrase.frasePtBr == this.resposta){
 
+      //Trocar pergunta da rodada
       this.rodada ++;
+
+      //progresso
+      this.progresso = this.progresso + (100 / this.frases.length);
+
+      //Atualiza o objeto rodadaFrase
       this.rodadaFrase = this.frases[this.rodada];
 
       alert("Tradução está correta");
