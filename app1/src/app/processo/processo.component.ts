@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-processo',
@@ -7,6 +7,6 @@ import { Component } from '@angular/core';
 })
 export class ProcessoComponent {
 
-  public progresso: number = 25; //String interpolation {{}} do progresso
+  @Input() public progresso: number = 25; //Property Binding [] do progresso
 
 }
