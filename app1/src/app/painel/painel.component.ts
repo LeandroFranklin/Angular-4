@@ -20,7 +20,7 @@ export class PainelComponent {
   public frases: Frase[] = FRASES;
 
   constructor(){
-    this.rodadaFrase = this.frases[this.rodada];
+    this.atualizarRodada()
   }
 
   public atualizarResposta(resposta:Event): void{
@@ -38,7 +38,7 @@ export class PainelComponent {
       this.progresso = this.progresso + (100 / this.frases.length);
 
       //Atualiza o objeto rodadaFrase
-      this.rodadaFrase = this.frases[this.rodada];
+      this.atualizarRodada();
 
       alert("Tradução está correta");
     }
@@ -47,6 +47,11 @@ export class PainelComponent {
       alert("Tradução está errada")
     }
 
+  }
+
+  public atualizarRodada(): void{
+    this.rodadaFrase = this.frases[this.rodada];
+    this.resposta = "";
   }
 
 }
