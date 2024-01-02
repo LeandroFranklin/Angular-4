@@ -16,6 +16,8 @@ export class PainelComponent {
   public rodadaFrase!: Frase;
 
   public progresso: number = 0;
+
+  public tentativas: number = 3;
   
   public frases: Frase[] = FRASES;
 
@@ -44,7 +46,14 @@ export class PainelComponent {
     }
 
     else{
+      
       alert("Tradução está errada")
+      this.tentativas--;
+
+      if(this.tentativas == -1){
+        alert("Você perdeu todas as tentativas");
+      }
+
     }
 
   }
