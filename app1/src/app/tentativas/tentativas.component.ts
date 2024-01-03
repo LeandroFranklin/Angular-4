@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 import { Coracao } from '../shared/coracao.model';
 
@@ -11,6 +11,10 @@ export class TentativasComponent {
 
   public coracaoVazio:string = "/assets/coracao_vazio.png";
   public coracaoCheio:string = "/assets/coracao_cheio.png";
+
+  @Input()
+  public tentativas!: number;
+  
 
   public coracoes: Coracao[] = [
     new Coracao(true), new Coracao(true), new Coracao(true)
