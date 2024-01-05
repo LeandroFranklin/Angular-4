@@ -39,6 +39,10 @@ export class PainelComponent {
       //progresso
       this.progresso = this.progresso + (100 / this.frases.length);
 
+      if(this.rodada == 4){
+        alert("Concluiu as traduções com sucesso!")
+      }
+
       //Atualiza o objeto rodadaFrase
       this.atualizarRodada();
 
