@@ -12,12 +12,23 @@ export class TentativasComponent {
   public coracaoVazio:string = "/assets/coracao_vazio.png";
   public coracaoCheio:string = "/assets/coracao_cheio.png";
 
-  @Input()
-  public tentativas!: number;
+  @Input() public tentativas!: number;
   
 
   public coracoes: Coracao[] = [
     new Coracao(true), new Coracao(true), new Coracao(true)
   ]
+
+  ngOnchanges(){
+    if(this.tentativas !== this.coracoes.length){
+      let indice = this.coracoes.length - this.tentativas;
+
+      this.coracoes[indice - 1].cheio = false;
+    }
+  }
+
+  ngOnInit(){
+
+  }
 
 }
